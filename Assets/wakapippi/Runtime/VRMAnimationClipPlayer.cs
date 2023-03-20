@@ -16,8 +16,6 @@ namespace wakapippi
 
         [Tooltip("動かす対象のVRMBlendShapeProxy。同じGameObjectにある場合は指定不要です。")]
         [SerializeField] private VRMBlendShapeProxy _vrmBlendShapeProxy;
-        [Tooltip("動かす対象のVRMBlendShapeProxy。同じGameObjectにある場合は指定不要です。")]
-        [SerializeField] private RuntimeAnimatorController _animatorController;
         
         private AnimatedValueStruct _struct;
         private VRMAnimationClipBindingOptionList _bindingOptionList;
@@ -53,7 +51,6 @@ namespace wakapippi
             if (_vrmBlendShapeProxy == null)
             {
                 _vrmBlendShapeProxy = GetComponent<VRMBlendShapeProxy>();
-               // _animatorController = GetComponent<()
             }
 
             if (_vrmBlendShapeProxy == null) return;
