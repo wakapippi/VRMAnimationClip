@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3421999048274021727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3417777836838978697}
+  - component: {fileID: 3381006212919605727}
+  - component: {fileID: 3380079824603652805}
+  - component: {fileID: 3379595271581080595}
+  - component: {fileID: 3422367037513459091}
+  m_Layer: 0
+  m_Name: VRMAnimationClipRecorder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3417777836838978697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3421999048274021727}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3381006212919605727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3421999048274021727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a94616cf260a0e4386d211583fd6681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playStartKey: 115
+  _playStopKey: 116
+  RecordedMotionData: {fileID: 0}
+  _animator: {fileID: 0}
+  _startFrame: 0
+  _playing: 0
+  _frameIndex: 0
+  _rootBoneSystem: 1
+  _targetRootBone: 0
+--- !u!114 &3380079824603652805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3421999048274021727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171f7816f5da7ba4eab3cf34b9955f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _recordStartKey: 114
+  _recordStopKey: 120
+  _animator: {fileID: 0}
+  _recording: 0
+  FrameIndex: 0
+  _rootBoneSystem: 1
+  _targetRootBone: 0
+  IK_LeftFootBone: 5
+  IK_RightFootBone: 6
+  TargetFPS: 60
+--- !u!114 &3379595271581080595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3421999048274021727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e7c07a2aa3ba848ab52ca6ed2e213b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _recordFaceBlendshapes: 0
+  _exclusiveBlendshapeNames: []
+  TargetFPS: 60
+--- !u!114 &3422367037513459091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3421999048274021727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2189629844447d5acdc67d4298193b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _recordVRMAnimationClip: 1
+  BlendShapeProxy: {fileID: 0}
