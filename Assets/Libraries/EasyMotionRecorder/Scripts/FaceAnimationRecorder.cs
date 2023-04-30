@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 /**
@@ -155,6 +157,7 @@ namespace Entum
 
         private void WriteAnimationFileToScriptableObject()
         {
+#if UNITY_EDITOR
             MotionDataRecorder.SafeCreateDirectory("Assets/Resources");
 
             string path = AssetDatabase.GenerateUniqueAssetPath(
@@ -174,6 +177,7 @@ namespace Entum
             _startTime = Time.time;
             _recordedTime = 0f;
             _frameCount = 0;
+#endif
         }
 
         //フレーム内の差分が無いかをチェックするやつ。
@@ -279,6 +283,7 @@ namespace Entum
         /// <param name="facial"></param>
         void ExportFacialAnimationClip(Animator root, CharacterFacialData facial)
         {
+#if UNITY_EDITOR
             var animclip = new AnimationClip();
 
             var mesh = _smeshs;
@@ -333,6 +338,7 @@ namespace Entum
                 AssetDatabase.GenerateUniqueAssetPath(outputPath));
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
+#endif
         }
 
         /// <summary>
@@ -342,6 +348,7 @@ namespace Entum
         /// <param name="facial"></param>
         void ExportFacialAnimationClipTest()
         {
+#if UNITY_EDITOR
             var animclip = new AnimationClip();
 
             var mesh = _smeshs;
@@ -383,6 +390,9 @@ namespace Entum
                                                       "_facial_ClipTest.anim"));
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
+#endif
         }
+
     }
+
 }

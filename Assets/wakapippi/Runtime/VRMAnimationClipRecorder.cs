@@ -1,12 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using UnityEngine;
 using Entum;
-using Unity.VisualScripting;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using VRM;
 
 namespace wakapippi
@@ -136,6 +135,9 @@ namespace wakapippi
 
         void ExportVRMAnimationClip()
         {
+#if UNITY_EDITOR
+            
+
             var bindOptionList = new VRMAnimationClipBindingOptionList();
             var eventSetTimeList = new List<float>();
             var animEventList = new List<AnimationEvent>();
@@ -224,11 +226,14 @@ namespace wakapippi
                 AssetDatabase.GenerateUniqueAssetPath(outputPath));
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
-            
+#endif
         }
 
         private List<AnimationEvent> SetAnimation(string propertyName, AnimationClip clip, List<VRMRuntimeAnimationData> dataList, List<float> eventSetTimeList)
         {
+#if UNITY_EDITOR
+            
+
             var output = new List<AnimationEvent>();
             
             var curveBinding = new EditorCurveBinding();
@@ -257,7 +262,11 @@ namespace wakapippi
 
             AnimationUtility.SetEditorCurve(clip, curveBinding, curve);
             return output;
+#else
+            return new List<AnimationEvent>();
+#endif
         }
+
     }
 
     struct VRMRuntimeAnimationData
